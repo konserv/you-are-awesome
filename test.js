@@ -21,7 +21,7 @@ describe(('You are awesome, aren\'t you?'), () => {
 
     const property = createEnumerableProperty(propertyName);
     const object = {};
-
+    Object.defineProperty(object, propertyName, {writable: true, enumerable: false, configurable: false});
     object[property] = propertyValue;
 
     assert.equal(Object.keys(object).length, 1);
